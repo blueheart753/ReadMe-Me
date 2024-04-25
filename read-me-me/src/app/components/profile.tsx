@@ -1,9 +1,9 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
 const Profile = () => {
   return (
     <div className="flex flex-col items-center">
-      <div className="sm:w-screen flex flex-col flex-wrap p-2 gap-2 border-b">
+      <div className="sm:w-screen flex flex-col flex-wrap p-2 gap-2">
         <p className="line-clamp-2 text-3xl font-black text-center leading-relaxed sm:text-7xl">
           안녕하세요!
         </p>
@@ -12,7 +12,7 @@ const Profile = () => {
         </p>
       </div>
       <div>
-        <div className="overflow-hidden w-40 m-auto border-slate-500 border-2 rounded-full">
+        <div className="overflow-hidden w-46 m-auto">
           <Image
             src={'/Kimminam.png'}
             alt="내 사진"
@@ -29,7 +29,7 @@ const Profile = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
