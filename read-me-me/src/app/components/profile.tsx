@@ -1,44 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { fetchWeather } from '../api/openweather'
 import Image from 'next/image'
-
-interface WeatherRes {
-  main: {
-    temp: number
-    humidity: number
-  }
-  weather: {
-    description: string
-  }[]
-}
-
-const fetchWeather = async (
-  city: string,
-  apiKey: string
-): Promise<{
-  temperature: number
-  humidity: number
-  description: string
-}> => {
-  const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-
-  try {
-    const response = await fetch(apiUrl)
-    if (!response.ok) {
-      throw new Error('Failed to fetch weather data')
-    }
-
-    const data: WeatherRes = await response.json()
-
-    return {
-      temperature: data.main.temp,
-      humidity: data.main.humidity,
-      description: data.weather[0].description,
-    }
-  } catch (error) {
-    throw new Error('Failed to fetch weather data')
-  }
-}
 
 const Profile = () => {
   const [weatherData, setWeatherData] = useState<{
@@ -55,7 +18,7 @@ const Profile = () => {
         const data = await fetchWeather(city, apiKey)
         setWeatherData(data)
       } catch (error) {
-        console.error('Error fetching weather data:')
+        console.error('Error fetching weather data:', error)
       }
     }
 
@@ -87,7 +50,6 @@ const Profile = () => {
             세상에 대한 호기심으로 어려움을 찾고 <br />
             문제를 해결을 위해 나아가는 개발자
           </p>
-          {weatherData?.description}
         </div>
       </div>
     </div>
