@@ -1,9 +1,7 @@
-import Image from 'next/image'
-
 const Profile = () => {
   return (
     <div className="flex flex-col items-center">
-      <div className="sm:w-screen flex flex-col flex-wrap p-2 gap-2">
+      <div className="sm:w-screen flex flex-col flex-wrap p-2 gap-2 justify-center">
         <p className="line-clamp-2 text-3xl font-black text-center leading-relaxed sm:text-7xl">
           안녕하세요!
         </p>
@@ -12,15 +10,6 @@ const Profile = () => {
         </p>
       </div>
       <div>
-        <div className="overflow-hidden w-46 m-auto">
-          <Image
-            src={'/Kimminam.png'}
-            alt="내 사진"
-            width={180}
-            height={100}
-            className="m-auto"
-          />
-        </div>
         <div className="p-6">
           <p className="font-semibold text-center">
             세상에 대한 호기심으로 어려움을 찾고 <br />
@@ -29,7 +18,7 @@ const Profile = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
