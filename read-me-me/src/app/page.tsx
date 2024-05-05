@@ -1,9 +1,11 @@
-import Profile from './components/profile';
+import Profile from './components/profile'
+import WhoIAm from './components/Who_I_am'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-between">
+    <main>
       <Profile />
+      <WhoIAm />
     </main>
-  );
+  )
 }
