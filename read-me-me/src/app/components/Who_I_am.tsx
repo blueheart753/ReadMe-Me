@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Description from './Description'
 
 const WhoIAm = () => {
   return (
@@ -7,19 +8,16 @@ const WhoIAm = () => {
         <span className="text-4xl font-black">Who I AM</span>
       </div>
       <div className="w-full flex gap-20 justify-center">
-        <div>
-          <div className="p-4 flex flex-col">
-            <p className="text-2xl text-center font-semibold">신념</p>
-            <p className="text-xl text-center">
-              세상에 대한 호기심으로 어려움을 찾고 <br />
-              문제해결을 위해 발전하는 개발자
-            </p>
-          </div>
-          <p className="text-2xl text-center font-semibold">좌우명</p>
-          <p className="text-xl text-center">
-            실수는 한순간이며 언제든 만회할수 있다. <br />
-            노력만 하면 결과도 뒤집을 수 있다.
-          </p>
+        <div className="flex flex-col justify-around items-end">
+          <Description
+            title={'소개'}
+            description={`호기심으로 어려움을 찾고
+        문제해결을 위해 성장하는 개발자`}
+          />
+          <Description
+            title={'좌우명'}
+            description={`실수는 한순간이며 언제든 만회 할수있다.`}
+          />
         </div>
 
         <Image
