@@ -1,4 +1,30 @@
+'use client';
+import { useState, useEffect } from 'react';
+import { fetchWeather } from '../api/openweather';
+import Image from 'next/image';
+
 const Profile = () => {
+  const [weatherData, setWeatherData] = useState<{
+    temperature: number;
+    humidity: number;
+    description: string;
+  } | null>(null);
+
+  useEffect(() => {
+    const fetchWeatherData = async () => {
+      try {
+        const city = 'Seoul';
+        const apiKey = '329b6fdafb9a0bfcc3854da027c0b3c9';
+        const data = await fetchWeather(city, apiKey);
+        setWeatherData(data);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    };
+
+    fetchWeatherData();
+  }, []);
+
   return (
     <div className="h-screen flex flex-col items-center justify-center mx-auto">
       <div className="flex flex-col flex-wrap p-2 gap-2 justify-center ">
@@ -12,7 +38,7 @@ const Profile = () => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
