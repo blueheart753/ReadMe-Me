@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 const ExtranalLink = (props: any) => {
-  const { src, alt, link } = props;
+  const { src, alt, link, gird } = props;
   const router = useRouter();
 
   return (
@@ -11,10 +11,10 @@ const ExtranalLink = (props: any) => {
       <Image
         src={`${src}`}
         alt={`${alt}`}
-        width={80}
-        height={80}
+        width={50}
+        height={50}
         onClick={() => router.push(`${link}`)}
-        className="sm:h-20"
+        className="sm:h-24 sm:w-24 cursor-pointer ${gird}"
       />
     </div>
   );
