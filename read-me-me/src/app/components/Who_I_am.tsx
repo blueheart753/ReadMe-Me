@@ -1,42 +1,132 @@
 'use client'
+import Image from 'next/image'
 import Description from './Description'
+import ExternalLink from './ExternalLink'
+import Stack from './Stack'
 
 const WhoIAm = () => {
-  const description: { introduce: string; motto: string } = {
-    introduce: '호기심을 통해 성장하며 문제해결을 위해 공부하는 개발자',
-    motto:
-      '실수는 한 순간이며 언제든 만회할 수 있다. 힘든 상황에서도 희망은 존재한다.',
+  const description: { info: React.ReactNode; motto: React.ReactNode } = {
+    info: (
+      <>
+        <p>Kim-Minam</p>
+        <p>010-2931-2157</p>
+        <p>kimminam8520@gmail.com</p>
+        <p>서울디지텍고등학교 재학 중</p>
+      </>
+    ),
+    motto: (
+      <>
+        <p>넘어지는 것을 두려워 해라.</p>
+        <p>
+          넘어지는 것이 두렵다면 다음에는 넘어지지 않게 방법을 생각하고
+          움직여라.
+        </p>
+      </>
+    ),
   }
 
-  const externalLinkInfos: { src: string; alt: string; link: string }[] = [
+  const externalLinkInfos: Array<{ [key: string]: string }> = [
     {
       src: '/github_logo.png',
-      alt: 'githubLogo',
+      alt: 'GitHub Logo',
       link: 'https://github.com/blueheart753',
+      name: 'GitHub',
     },
     {
       src: '/Instagram_logo.png',
-      alt: 'Instagram_logo',
+      alt: 'Instagram Logo',
       link: 'https://www.instagram.com/kimminami50/',
+      name: 'Instagram',
     },
     {
       src: '/rallit_icon.svg',
-      alt: 'rallit_icon',
+      alt: 'Rallit Icon',
       link: 'https://www.rallit.com/hub/resumes/29560/%EA%B9%80%EB%AF%B8%EB%82%A8',
+      name: 'Rallit',
     },
     {
       src: '/velog_logo.jpg',
-      alt: 'velog_icon',
+      alt: 'Velog Icon',
       link: 'https://velog.io/@blueboom/posts',
+      name: 'Velog',
     },
   ]
 
+  const StackInfos: Array<{ [key: string]: string }> = [
+    { src: '/HTML.png', alt: 'HTML', name: 'HTML' },
+    { src: '/CSS.png', alt: 'CSS', name: 'CSS' },
+    { src: '/JS.png', alt: 'JS', name: 'JS' },
+    { src: '/React.png', alt: 'React', name: 'React' },
+    { src: '/Next.png', alt: 'Next', name: 'Next' },
+    { src: '/tailwindcss.png', alt: 'tailwindcss', name: 'tailwindcss' },
+  ]
+
   return (
-    <div className="w-full h-screen flex flex-col items-center relative p-6">
-      <div className="w-4/5 h-16 border-2 rounded-2xl flex items-center p-6">
-        <span className="text-white text-2xl font-SUITRegular">Kim Minam</span>
-      </div>
-    </div>
+    <section className="w-full h-screen flex flex-col items-center relative p-6">
+      <section className="w-full flex flex-col items-center justify-center">
+        <article className="w-4/5 h-16 border-2 rounded-2xl flex items-center p-6">
+          <span className="text-white text-2xl font-SUITRegular">
+            Kim Minam
+          </span>
+        </article>
+        <section className=" h-1/8 p-8 flex auto-rows-auto justify-center gap-10">
+          <article className="h-full">
+            <Image
+              src={'/Kimminam.JPG'}
+              width={400}
+              height={400}
+              alt="김미남"
+              className="rounded-lg h-full"
+            />
+          </article>
+          <article className="w-1/2 h-full flex auto-rows-auto items-center flex-col gap-10">
+            {Object.entries(description).map(([key, value]) => (
+              <Description
+                key={key}
+                title={key.charAt(0).toUpperCase() + key.slice(1) + '.'}
+                subTitle={key === 'info' ? '간단한 정보' : '좌우명'}
+                description={value}
+              />
+            ))}
+          </article>
+        </section>
+      </section>
+      <section className="w-8/12 flex gap-10">
+        <article className="w-2/5 flex flex-1 flex-col border-2 p-4 rounded-lg bg-slate-800 h-1/12">
+          <div className="p-2">
+            <h1 className="text-white text-4xl">ExternalLink.</h1>
+            <h3 className="text-gray-400">외부링크.</h3>
+          </div>
+          <div className="flex justify-around ">
+            {externalLinkInfos.map((info, index) => (
+              <ExternalLink
+                key={index}
+                src={info.src}
+                alt={info.alt}
+                link={info.link}
+                name={info.name}
+              />
+            ))}
+          </div>
+        </article>
+        <article className="w-2/5 flex flex-1 flex-col border-2 p-4 rounded-lg bg-slate-800 h-1/12">
+          <div className="p-2">
+            <h1 className="text-white text-4xl">Stack.</h1>
+            <h3 className="text-gray-400">기술스택.</h3>
+          </div>
+          <div className="flex justify-around">
+            {StackInfos.map((stack, index) => (
+              <Stack
+                key={index}
+                src={stack.src}
+                alt={stack.alt}
+                name={stack.name}
+              />
+            ))}
+          </div>
+        </article>
+      </section>
+    </section>
   )
 }
 
