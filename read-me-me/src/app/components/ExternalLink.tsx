@@ -5,21 +5,25 @@ type Props = {
   src: string
   alt: string
   link: string
+  name: string
 }
 
-const ExtranalLink = ({ src, alt, link }: Props) => {
+const ExtranalLink = ({ src, alt, link, name }: Props) => {
   const router = useRouter()
 
   return (
-    <div>
-      <Image
-        src={src}
-        alt={alt}
-        width={50}
-        height={50}
-        onClick={() => router.push(link)}
-        className="sm:h-24 sm:w-24 cursor-pointer"
-      />
+    <div className="text-center">
+      <div>
+        <Image
+          src={src}
+          alt={alt}
+          width={50}
+          height={50}
+          onClick={() => router.push(link)}
+          className="sm:h-24 sm:w-24 cursor-pointer"
+        />
+        <span className="text-white p-2">{name}</span>
+      </div>
     </div>
   )
 }
