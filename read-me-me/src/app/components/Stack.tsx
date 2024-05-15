@@ -8,14 +8,14 @@ type props = {
 
 const Stack = ({ src, alt, name }: props) => {
   return (
-    <div className="text-center">
+    <div className="text-center flex flex-col justify-center">
       <div>
         <Image
           src={src}
           alt={alt + 'img'}
           width={50}
           height={50}
-          className="sm:h-24 sm:w-24 cursor-pointer"
+          className="sm:h-20 sm:w-20 cursor-pointer mx-auto"
         />
         <span className="text-white p-2">{name}</span>
       </div>
