@@ -1,17 +1,17 @@
-'use client'
-import Image from 'next/image'
-import Description from './Description'
-import ExternalLink from './ExternalLink'
-import Stack from './Stack'
+'use client';
+import Image from 'next/image';
+import Description from './Description';
+import ExternalLink from './ExternalLink';
+import Stack from './Stack';
 
 const WhoIAm = () => {
   const description: { info: React.ReactNode; motto: React.ReactNode } = {
     info: (
       <>
         <p>Kim-Minam</p>
-        <p>010-2931-2157</p>
-        <p>kimminam8520@gmail.com</p>
-        <p>서울디지텍고등학교 재학 중</p>
+        <p>010-1111-1111</p>
+        <p>0@gmail.com</p>
+        <p>서울디고등학교 재학 중</p>
       </>
     ),
     motto: (
@@ -23,7 +23,7 @@ const WhoIAm = () => {
         </p>
       </>
     ),
-  }
+  };
 
   const externalLinkInfos: Array<{ [key: string]: string }> = [
     {
@@ -50,7 +50,7 @@ const WhoIAm = () => {
       link: 'https://velog.io/@blueboom/posts',
       name: 'Velog',
     },
-  ]
+  ];
 
   const StackInfos: Array<{ [key: string]: string }> = [
     { src: '/HTML.png', alt: 'HTML', name: 'HTML' },
@@ -59,18 +59,18 @@ const WhoIAm = () => {
     { src: '/React.png', alt: 'React', name: 'React' },
     { src: '/Next.png', alt: 'Next', name: 'Next' },
     { src: '/tailwindcss.png', alt: 'tailwindcss', name: 'tailwindcss' },
-  ]
+  ];
 
   return (
-    <section className="w-full h-screen flex flex-col items-center relative p-6">
+    <section className="sm:w-full sm:h-screen flex flex-col items-center relative p-6">
       <section className="w-full flex flex-col items-center justify-center">
-        <article className="w-4/5 h-16 border-2 rounded-2xl flex items-center p-6">
-          <span className="text-white text-2xl font-SUITRegular">
+        <article className="w-full sm:w-4/5 h-2 sm:h-16 border-2 rounded-2xl flex items-center p-6">
+          <span className="mx-auto sm:mx-0 text-white sm:text-2xl font-SUITSemiBold">
             Kim Minam
           </span>
         </article>
-        <section className=" h-1/8 p-8 flex auto-rows-auto justify-center gap-10">
-          <article className="h-full">
+        <section className="h-1/8 flex flex-col sm:flex-row auto-rows-auto items-center justify-center">
+          <article className="h-1/2 md:h-full p-10">
             <Image
               src={'/Kimminam.JPG'}
               width={400}
@@ -79,7 +79,7 @@ const WhoIAm = () => {
               className="rounded-lg h-full"
             />
           </article>
-          <article className="w-1/2 h-full flex auto-rows-auto items-center flex-col gap-10">
+          <article className="h-2/3 sm:h-full flex items-center justify-center flex-col gap-10">
             {Object.entries(description).map(([key, value]) => (
               <Description
                 key={key}
@@ -91,10 +91,12 @@ const WhoIAm = () => {
           </article>
         </section>
       </section>
-      <section className="w-8/12 flex gap-10">
-        <article className="w-2/5 flex flex-1 flex-col border-2 p-4 rounded-lg bg-slate-800 h-1/12">
+      <section className="sm:w-8/12 flex flex-col sm:flex-row gap-10 py-10">
+        <article className="sm:w-2/5 w-96 flex flex-1 flex-col border-2 p-2 sm:p-4 rounded-lg bg-slate-800 h-1/12">
           <div className="p-2">
-            <h1 className="text-white text-4xl">ExternalLink.</h1>
+            <h1 className="text-white text-2xl sm:text-4xl font-SUITSemiBold">
+              ExternalLink.
+            </h1>
             <h3 className="text-gray-400">외부링크.</h3>
           </div>
           <div className="flex justify-around ">
@@ -109,12 +111,14 @@ const WhoIAm = () => {
             ))}
           </div>
         </article>
-        <article className="w-2/5 flex flex-1 flex-col border-2 p-4 rounded-lg bg-slate-800 h-1/12">
+        <article className="sm:w-2/5 w-96 flex flex-1 flex-col border-2 p-2 sm:p-4 rounded-lg bg-slate-800 h-1/12">
           <div className="p-2">
-            <h1 className="text-white text-4xl">Stack.</h1>
+            <h1 className="text-white text-2xl sm:text-4xl font-SUITSemiBold">
+              Stack.
+            </h1>
             <h3 className="text-gray-400">기술스택.</h3>
           </div>
-          <div className="flex justify-around">
+          <div className="flex justify-center gap-2">
             {StackInfos.map((stack, index) => (
               <Stack
                 key={index}
@@ -127,7 +131,7 @@ const WhoIAm = () => {
         </article>
       </section>
     </section>
-  )
-}
+  );
+};
 
-export default WhoIAm
+export default WhoIAm;
