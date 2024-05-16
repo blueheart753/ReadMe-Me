@@ -9,8 +9,7 @@ const WhoIAm = () => {
     info: (
       <>
         <p>Kim-Minam</p>
-        <p>010-1111-1111</p>
-        <p>0@gmail.com</p>
+        <p>kimminam8520@gmail.com</p>
         <p>서울디고등학교 재학 중</p>
       </>
     ),
