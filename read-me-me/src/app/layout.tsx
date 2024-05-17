@@ -19,7 +19,7 @@ export default function RootLayout({
       <head>
         <meta
           name="Description"
-          content="안녕하세요! 저는 김미남입니다., Minam Kim, 김미남, kimminam, Kimminam, Read-Me-Me, read-me-me, readmeme, ReadMeMe"
+          content="안녕하세요! 저는 김미남입니다., Minam Kim, 김미남, kimminam, Kimminam, Read-Me-Me, read-me-me, readmeme, ReadMeMe, gimminam"
         />
       </head>
       <body className={inter.className}>{children}</body>
