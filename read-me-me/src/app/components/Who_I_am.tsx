@@ -71,14 +71,14 @@ const WhoIAm = () => {
         <section className="h-1/8 flex flex-col sm:flex-row auto-rows-auto items-center justify-center">
           <article className="h-1/2 md:h-full p-10">
             <Image
-              src={'/Kimminam.JPG'}
+              src="/Kimminam.JPG"
               width={400}
               height={400}
-              alt="김미남"
+              alt="김미남 사진"
               className="rounded-lg h-full"
             />
           </article>
-          <article className="h-2/3 sm:h-full flex items-center justify-center flex-col gap-10">
+          <article className="h-2/3 sm:h-full flex items-center justify-center flex-col gap-10 sm:w-3/8">
             {Object.entries(description).map(([key, value]) => (
               <Description
                 key={key}
@@ -91,7 +91,7 @@ const WhoIAm = () => {
         </section>
       </section>
       <section className="sm:w-8/12 flex flex-col sm:flex-row gap-10 py-10">
-        <article className="sm:w-2/5 w-96 flex flex-1 flex-col border-2 p-2 sm:p-4 rounded-lg bg-slate-800 h-1/12">
+        <article className="sm:w-2/5 w-80 flex flex-1 flex-col border-2 p-2 sm:p-4 rounded-lg bg-slate-800 h-1/12">
           <div className="p-2">
             <h1 className="text-white text-2xl sm:text-4xl font-SUITSemiBold">
               ExternalLink.
@@ -110,14 +110,14 @@ const WhoIAm = () => {
             ))}
           </div>
         </article>
-        <article className="sm:w-2/5 w-96 flex flex-1 flex-col border-2 p-2 sm:p-4 rounded-lg bg-slate-800 h-1/12">
+        <article className="sm:w-2/5 w-80 flex flex-1 flex-col border-2 p-2 sm:p-4 rounded-lg bg-slate-800 h-1/12">
           <div className="p-2">
             <h1 className="text-white text-2xl sm:text-4xl font-SUITSemiBold">
               Stack.
             </h1>
             <h3 className="text-gray-400">기술스택.</h3>
           </div>
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-center">
             {StackInfos.map((stack, index) => (
               <Stack
                 key={index}
