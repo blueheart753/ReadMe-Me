@@ -15,7 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
+      <head>
+        <meta name="keyword" content="Kimminam" />
+        <meta name="keyword" content="kimminam" />
+        <meta name="keyword" content="김미남" />
+        <meta name="keyword" content="Minam Kim" />
+        <meta name="Description" content="안녕하세요! 저는 김미남입니다." />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
