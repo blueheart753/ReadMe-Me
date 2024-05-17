@@ -69,7 +69,7 @@ const WhoIAm = () => {
           </span>
         </article>
         <section className="h-1/8 flex flex-col sm:flex-row auto-rows-auto items-center justify-center">
-          <article className="h-1/2 md:h-full p-10">
+          <article className="h-1/2 md:h-full p-10  relative sm:left-32">
             <Image
               src="/Kimminam.JPG"
               width={400}
