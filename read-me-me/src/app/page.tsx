@@ -4,6 +4,8 @@ import Profile from './components/Profile';
 import Pros from './components/Pros';
 import Cons from './components/Cons';
 import ExtranalLink from './components/ExtranalLink';
+import Hobby from './components/Hobby';
+import LikeDislike from './components/LikeDislike';
 
 export default function Home() {
   return (
@@ -17,7 +19,13 @@ export default function Home() {
         </section>
         <section className={styles.otherWrap}>
           <ExtranalLink />
-          <section className={styles.hobbyLikeDislikeWrap}></section>
+          <section className={styles.hobbyLikeDislikeWrap}>
+            <Hobby />
+            <section className={styles.LikeDislikeWrap}>
+              <LikeDislike isLike={true} />
+              <LikeDislike isLike={false} />
+            </section>
+          </section>
         </section>
       </section>
     </main>
