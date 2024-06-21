@@ -4,7 +4,7 @@ import styles from '../page.module.css';
 const Cons = () => {
   return (
     <article className={styles.prosConsContainer}>
-      <div className={styles.discriptionWrap}>
+      <div className={styles.descriptionWrap}>
         <p className={styles.title}>Cons.</p>
         <p className={styles.info}>단점.</p>
       </div>
@@ -17,9 +17,9 @@ const Cons = () => {
           className={styles.prosConsImg}
         />
       </div>
-      <div className={styles.discriptionBox}>
+      <div className={styles.descriptionBox}>
         <p className={styles.subTitle}>포기하지 않는 끈기.</p>
-        <p className={styles.discription}>
+        <p className={styles.description}>
           무언가를 포기하지 않고 해낸다는 것은 좋은 것이지만 <br /> 가끔 너무
           오래 붙잡아두고 있어 문제가 발생하는 경우도 있습니다.
         </p>

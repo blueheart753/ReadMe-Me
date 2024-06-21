@@ -12,7 +12,7 @@ const ExtranalLinks = {
 const ExtranalLink = () => {
   return (
     <section className={styles.extranalLinksContainer}>
-      <div className={styles.discriptionWrap}>
+      <div className={styles.descriptionWrap}>
         <p className={styles.title}>ExtranalLink.</p>
         <p className={styles.info}>외부링크.</p>
       </div>
