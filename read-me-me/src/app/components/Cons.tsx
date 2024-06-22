@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import styles from '../page.module.css';
+import Image from 'next/image'
+import styles from '../page.module.css'
 
 const Cons = () => {
   return (
@@ -20,12 +20,12 @@ const Cons = () => {
       <div className={styles.descriptionBox}>
         <p className={styles.subTitle}>포기하지 않는 끈기.</p>
         <p className={styles.description}>
-          무언가를 포기하지 않고 해낸다는 것은 좋은 것이지만 <br /> 가끔 너무
-          오래 붙잡아두고 있어 문제가 발생하는 경우도 있습니다.
+          무언가를 포기하지 않고 해낸다는 것은 좋은 것이지만 가끔 너무 오래
+          붙잡아두고 있어 문제가 발생하는 경우도 있습니다.
         </p>
       </div>
     </article>
-  );
-};
+  )
+}
 
-export default Cons;
+export default Cons
