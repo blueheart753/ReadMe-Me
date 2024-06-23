@@ -20,7 +20,7 @@ const Pros = () => {
       <div className={styles.descriptionBox}>
         <p className={styles.subTitle}>타인을 위하는 이타심.</p>
         <p className={styles.description}>
-          누군가를 도와주는 것 희열을 느끼며 좋아하며 도움을 주는 것으로 저의
+          누군가를 도와주는 것에 희열을 느끼며 좋아하며 도움을 주는 것으로 저의
           존재의의를 깨닫고 행복을 느낍니다.
         </p>
       </div>
