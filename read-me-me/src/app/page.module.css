@@ -4,7 +4,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 2em 10em;
-  flex-wrap: wrap;
 }
 
 .sectionWrap {
@@ -12,7 +11,6 @@
   display: flex;
   margin-top: 51px;
   gap: 30px;
-  flex-wrap: wrap;
 }
 
 .titleWrap {
@@ -45,10 +43,9 @@
 }
 
 .profileWrap {
-  padding: 30px 20px;
+  padding: 1rem;
   background-color: #f5f5f5;
   border-radius: 20px;
-  flex-wrap: wrap;
 }
 
 .prosConsWrap {
@@ -73,10 +70,6 @@
   font-family: 'SUIT-Bold';
 }
 
-.descriptionBox {
-  margin-top: 10px;
-}
-
 .onlyDescriptionBox {
   margin-top: 2rem;
 }
@@ -91,13 +84,13 @@
 }
 
 .prosConsContainer {
-  padding: 15px 25px;
+  padding: 1.3rem;
   background-color: #f5f5f5;
   border-radius: 20px;
-  height: 50%;
   display: flex;
+  flex: 1;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-around;
 }
 
 .imgBox {
@@ -123,9 +116,9 @@
   border-radius: 20px;
   height: 34%;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 10px;
 }
 
 .linkBox {
@@ -152,8 +145,8 @@
   background-color: #f5f5f5;
   border-radius: 20px;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
-  gap: 10px;
   width: 50%;
 }
 
@@ -182,7 +175,7 @@
 }
 
 .descriptionWrap {
-  margin-top: 1rem;
+  margin-top: 1.3rem;
   background-color: #f5f5f5;
   border-radius: 20px;
   display: flex;
@@ -210,6 +203,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     margin-top: 51px;
     gap: 30px;
   }
@@ -243,7 +237,7 @@
   }
 
   .onlyDescriptionBox {
-    margin-top: 1rem;
+    margin-top: 1.3rem;
   }
 
   .descriptionBox {
@@ -290,5 +284,11 @@
 
   .favoriteSong {
     font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .description {
+    width: 100%;
   }
 }
